@@ -1,0 +1,10 @@
+?attenu
+head(attenu)
+table(attenu$event,attenu$mag)
+with(attenu,table(event,mag))
+aggregate(mag ~ event, attenu, mean)
+aggregate(mag ~ event+station , attenu, mean)
+aggregate(cbind(mag, dist) ~ event , attenu, mean)
+with(mtcars, tapply(mpg, list(cyl , am), mean))
+with(mtcars, tapply(mpg, list(gear , am), mean))
+with(mtcars, tapply(mpg, list(gear , am, cyl), mean))
